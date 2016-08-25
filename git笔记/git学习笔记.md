@@ -177,9 +177,9 @@ https://git-for-windows.github.io/ 或百度
 
 
 	
-## 其它
+## 三 其它
 
-### 工作未完成，需要进行其他工作时
+### 1. 工作未完成，需要进行其他工作时
     $ git status        //保存工作区
     git stash list      //查看 stash 保存的内容
     恢复stash有两种方法：
@@ -191,7 +191,7 @@ https://git-for-windows.github.io/ 或百度
     你可以多次stash，恢复的时候，先用git stash list查看，然后恢复指定的stash，用命令：
     $ git stash apply stash@{0}
     
-### 自定义Git
+### 2. 自定义Git
 
 让Git显示颜色，会让命令输出看起来更醒目：
    
@@ -215,7 +215,7 @@ https://git-for-windows.github.io/ 或百度
     $ git check-ignore -v App.class
     .gitignore:3:*.class    App.class
 
-### 配置别名
+### 3. 配置别名
 
 
 #### 基本配置
@@ -258,7 +258,7 @@ https://git-for-windows.github.io/ 或百度
 
 
 
-##搭建Git服务器
+## 四 搭建Git服务器
 
 在远程仓库一节中，我们讲了远程仓库实际上和本地仓库没啥不同，纯粹为了7x24小时开机并交换大家的修改。
 
@@ -268,19 +268,19 @@ GitHub就是一个免费托管开源代码的远程仓库。但是对于某些�
 
 假设你已经有sudo权限的用户账号，下面，正式开始安装。
 
-第一步，安装git：
+### 1. 安装git：
 
     $ sudo apt-get install git
 
-第二步，创建一个git用户，用来运行git服务：
+### 2. 创建一个git用户，用来运行git服务：
 
     $ sudo adduser git
 
-第三步，创建证书登录：
+### 3. 创建证书登录：
 
 收集所有需要登录的用户的公钥，就是他们自己的id_rsa.pub文件，把所有公钥导入到/home/git/.ssh/authorized_keys文件里，一行一个。
 
-第四步，初始化Git仓库：
+### 4. 初始化Git仓库：
 
 先选定一个目录作为Git仓库，假定是/srv/sample.git，在/srv目录下输入命令：
 
@@ -290,7 +290,7 @@ Git就会创建一个裸仓库，裸仓库没有工作区，因为服务器上�
 
     $ sudo chown -R git:git sample.git
 
-第五步，禁用shell登录：
+### 5. 禁用shell登录：
 
 出于安全考虑，第二步创建的git用户不允许登录shell，这可以通过编辑/etc/passwd文件完成。找到类似下面的一行：
 
@@ -302,7 +302,7 @@ Git就会创建一个裸仓库，裸仓库没有工作区，因为服务器上�
 
 这样，git用户可以正常通过ssh使用git，但无法登录shell，因为我们为git用户指定的git-shell每次一登录就自动退出。
 
-第六步，克隆远程仓库：
+### 6. 克隆远程仓库：
 
 现在，可以通过git clone命令克隆远程仓库了，在各自的电脑上运行：
 
