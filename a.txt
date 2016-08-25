@@ -1,0 +1,3 @@
+创建一个没有父节点的分支gh-pages。因为github规定，只有该分支中的页面，才会生成网页文件。
+
+$ git checkout --orphan gh-pages
