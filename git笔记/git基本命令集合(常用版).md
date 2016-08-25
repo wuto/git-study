@@ -1,12 +1,16 @@
-# git基本命令集合
+﻿# git基本命令集合
 
-linux 命令 
 -------------------------------------
-mkdir test （创建文件夹test）
 
-cd test （切换到test目录）
+##linux 命令 
 
-touch a.md （新建a.md文件）
+> mkdir test （创建文件夹test）
+
+> cd test （切换到test目录）
+
+> touch a.md （新建a.md文件）
+
+> pwd （查看当前所在路径）
 
 
 git命令   任何操作都需要以 git 命令为开头
